@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#about" role="menuitem">About</a></li>
+                <li><a href="#projects" role="menuitem">Projects</a></li>
+                <li><a href="#skills" role="menuitem">Skills</a></li>
+                <li><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="https://avatars.githubusercontent.com/u/197551718" alt="Profile Picture">
+            <p>Information about me.</p>
+            <p>Check out my <a href="https://github.com/kevinlkwwork" target="_blank">GitHub</a></p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="project-filters">
+                <button onclick="filterProjects('all')">All</button>
+                <button onclick="filterProjects('web')">Web</button>
+                <button onclick="filterProjects('mobile')">Mobile</button>
+            </div>
+            <article class="project" data-category="web">
+                <h3>Project 1</h3>
+                <figure>
+                    <img src="img/P1.png" alt="Project 1 Screenshot" onclick="openLightbox(this.src)">
+                    <figcaption>Project 1 Screenshot</figcaption>
+                </figure>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Condimentum proin nibh vulputate natoque lobortis tellus mattis urna? Platea tempus elementum tortor cras hendrerit, nibh nisi eu. Nascetur porttitor habitasse senectus malesuada nam; risus sodales tincidunt. Laoreet facilisi dolor; iaculis sit tempor risus porta.</p>
+            </article>
+            <article class="project" data-category="mobile">
+                <h3>Project 2</h3>
+                <figure>
+                    <img src="img/P2.png" alt="Project 2 Screenshot" onclick="openLightbox(this.src)">
+                    <figcaption>Project 2 Screenshot</figcaption>
+                </figure>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Eget porta etiam est facilisi in. Volutpat nisl maecenas amet natoque metus platea. Phasellus fermentum ultricies lectus nec, primis lobortis mollis. Elementum tellus quam pretium tellus; vivamus porta lorem blandit quisque. Scelerisque porta suscipit platea urna vivamus purus.</p>
+            </article>
+            <article class="project" data-category="web">
+                <h3>Project 3</h3>
+                <figure>
+                    <img src="img/P3.png" alt="Project 3 Screenshot" onclick="openLightbox(this.src)">
+                    <figcaption>Project 3 Screenshot</figcaption>
+                </figure>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Phasellus viverra rhoncus lacinia nibh cubilia facilisi viverra. Elit porttitor bibendum maximus dignissim magnis cras egestas. Quisque ligula viverra quis efficitur dolor.</p>
+            </article>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>My skills.</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>How to contact me.</p>
+            <form id="contact-form" action="/submit_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
